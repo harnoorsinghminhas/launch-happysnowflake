@@ -64,6 +64,7 @@ $$(".js-join").forEach(function (form) {
 /* Buy / reserve: checkout is not live yet, so say so plainly and point to the free preview. */
 $$(".js-pay").forEach(function (b) {
   b.addEventListener("click", function () {
+    /* pay-wired */ var pu = b.getAttribute("data-pay-url"); if (pu) { window.location.assign(pu); return; }
     var note = b.parentNode.querySelector(".js-note");
     if (note) note.textContent = "Checkout isn't open yet. Join the free preview and we'll email you the secure link first. Nothing was charged.";
   });
